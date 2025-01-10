@@ -9,8 +9,45 @@
 </head>
 
 <body class="h-dvh grid grid-rows-2 grid-cols-3">
-  <aside class="bg-red-950 row-span-2">
-    <h1>Calculadora de Investimentos</h1>
+  <aside class="flex flex-col justify-between bg-emerald-300 row-span-2 py-5 px-2">
+    <h1 class="text-2xl font-bold px-6 py-2">Calculadora de Investimentos</h1>
+    <!-- Formulário -->
+    <form class="w-full">
+      <!-- Rentabilidade -->
+      <div class="flex w-full flex-col px-6 my-2">
+        <label for="return-rate" class="font-bold text-gray-700">Rentabilidade</label>
+        <div class="flex">
+          <input value="%" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="number" class="w-1/2 " id="return-rate">
+          <select id="evaluation-period"
+            class="w-1/3 rounded-r-lg text-center border-l-2 border-emerald-600 hover:bg-emerald-950 hover:text-slate-200">
+            <option value="monthly">Mensal</option>
+            <option value="yearly">Anual</option>
+          </select>
+        </div>
+      </div>
+      <!-- Imposto sobre lucro -->
+      <div class="flex w-full flex-col px-6 my-2">
+        <label for="return-rate" class="font-bold text-gray-700">Impostos sobre lucro</label>
+        <div class="flex">
+          <input value="%" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="number" class="w-5/6 rounded-r-lg " id="return-rate">
+        </div>
+      </div>
+      <!-- Imposto sobre lucro -->
+      <div class="flex w-full flex-col px-6 my-2">
+        <label for="return-rate" class="font-bold text-gray-700">Impostos sobre lucro</label>
+        <div class="flex">
+          <input value="%" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="number" class="w-5/6 rounded-r-lg " id="return-rate">
+        </div>
+      </div>
+    </form>
+
+    <div>
+      <button>Calcular</button>
+      <button>Limpar</button>
+    </div>
   </aside>
   <main>
     <p>Resultados</p>
