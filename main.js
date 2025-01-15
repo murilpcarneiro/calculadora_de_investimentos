@@ -2,7 +2,6 @@ import generateReturnsArray from "./src/investimentGoals.js";
 
 const investimentForm = document.getElementById('investiment-form');
 const resetBtn = document.getElementById('resetBtn');
-resetBtn.addEventListener('click', clearValues);
 
 function renderProgression(e) {
   e.preventDefault();
@@ -27,6 +26,20 @@ function renderProgression(e) {
   );
 
   console.log(returnsArray);
+}
+
+function clearValues() {
+  for (const formElement of investimentForm) {
+    if (formElement.tagName === 'INPUT' && formElement.hasAttribute('name')) {
+      formElement.value = "";
+    }
+  }
+  const errorInputsContainers = document.querySelectorAll('.error');
+
+  for (const errorInputContainer of errorInputsContainers) {
+    errorInputContainer.classList.remove('error');
+    errorInputContainer.parentElement.querySelector('p').remove();
+  }
 }
 
 function validateInput(e) {
@@ -58,13 +71,6 @@ for (const formElement of investimentForm) {
   }
 }
 
-function clearValues() {
-  for (const formElement of investimentForm) {
-    if (formElement.tagName === 'INPUT' && formElement.hasAttribute('name')) {
-      formElement.value = "";
-    }
-  }
-
-}
 
 investimentForm.addEventListener('submit', renderProgression);
+resetBtn.addEventListener('click', clearValues);
