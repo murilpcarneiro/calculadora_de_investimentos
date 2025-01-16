@@ -148,5 +148,5 @@ for (const formElement of investimentForm) {
 }
 
 
-investimentForm.addEventListener('submit', renderProgression);
+// investimentForm.addEventListener('submit', renderProgression);
 resetBtn.addEventListener('click', clearValues);
