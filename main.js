@@ -8,6 +8,14 @@ const resetBtn = document.getElementById('resetBtn');
 let doughnutChartReference = {};
 let progressionChartReference = {};
 
+const columnsArrayy = [
+  { columnLabel: "Total Investido", accessor: "investedAmount" },
+  { columnLabel: "Rendimento mensal", accessor: "interestReturns" },
+  { columnLabel: "Rendimento total", accessor: "totalInterestReturns" },
+  { columnLabel: "Mês", accessor: "month" },
+  { columnLabel: "Quantia Total", accessor: "totalAmount" }
+]
+
 function formatCurrency(value) {
   return value.toFixed(2);
 }
@@ -119,7 +127,6 @@ function clearValues() {
 }
 
 function validateInput(e) {
-
   if (e.target.value === '') {
     return;
   }
@@ -127,7 +134,6 @@ function validateInput(e) {
   const { parentElement } = e.target;
   const grandParentElement = e.target.parentElement.parentElement;
   const inputValue = e.target.value.replace(",", ".");
-
 
   if ((isNaN(inputValue) || Number(inputValue) <= 0) && !parentElement.classList.contains('error')) {
     const errorTextElement = document.createElement('p');
