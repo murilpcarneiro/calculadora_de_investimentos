@@ -34,7 +34,13 @@ Este projeto é uma calculadora de investimentos que permite aos usuários calcu
 
    git clone https://github.com/seu-usuario/calculadora-de-investimentos.git
 
-2. Pra rodar em ambiente de desenvolvimento:
+2. Intale as dependências via npm:
+   ```bash
+
+   npm install
+
+3. Rode em ambiente de desenvolvimento:
    ```bash
 
    npm run dev
+
